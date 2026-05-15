@@ -52,7 +52,7 @@ Every employee who resigns doesn't just mean losing one person — it also means
 | **Google Sheets** | Data cleaning, preprocessing, pivot analysis, and dashboard |
 | **Canva** | Report visualization & presentation storytelling |
 
-🔗 [View Google Sheets (view only)]([https://docs.google.com/spreadsheets/d/1Y5oFu8jkWHvGFuRvMw_ZcAjYE6GOuiql/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1Y5oFu8jkWHvGFuRvMw_ZcAjYE6GOuiql/edit?usp=sharing&ouid=101609832099856013694&rtpof=true&sd=true))
+🔗 [View Google Sheets (view only)](https://docs.google.com/spreadsheets/d/1Y5oFu8jkWHvGFuRvMw_ZcAjYE6GOuiql/edit?usp=sharing&ouid=101609832099856013694&rtpof=true&sd=true)
 
 ---
 
