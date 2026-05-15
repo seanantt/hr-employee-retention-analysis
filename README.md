@@ -85,7 +85,7 @@ All cleaning was performed in Google Sheets using built-in formulas.
 | Engineering | 263 | 45 | **17.1%** ← lowest |
 | **Grand Total** | **1,980** | **391** | **19.75%** |
 
-![Attrition by Department](reports/figures/attrition_by_dept.png)
+![Attrition by Department](reports/figures/Attrition By Department.png)
 
 ---
 
@@ -105,7 +105,7 @@ Employees with low satisfaction scores are significantly more likely to resign:
 - Satisfaction < 3 (Low): 437 employees → **56.1% resign rate**
 - Satisfaction ≥ 3 (High): 1,542 employees → **9.5% resign rate**
 
-![Satisfaction vs Resign Rate](reports/figures/satisfaction_vs_resign.png)
+![Satisfaction vs Resign Rate](reports/figures/Employee by Satifaction Value .png)
 
 ---
 
@@ -120,7 +120,7 @@ Employees with low satisfaction scores are significantly more likely to resign:
 
 Resignation risk peaks during **year 2 to 3**, indicating a critical early tenure window that requires proactive intervention before employees decide to leave.
 
-![Attrition by Tenure](reports/figures/tenure_attrition.png)
+![Attrition by Tenure](reports/figures/critical_tenure.png)
 
 ---
 
