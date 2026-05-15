@@ -152,26 +152,15 @@ Implementing these three recommendations has the potential to deliver:
 talenthub-hr-retention/
 ├── README.md
 ├── .gitignore
-│
 ├── data/
-│   ├── talenthub_clean.csv        ← exported from Google Sheets
+│   ├── talenthub_clean.csv
 │   └── data_dictionary.md
-│
 ├── cleaning/
-│   ├── cleaning_log.md            ← step-by-step cleaning documentation
-│   └── google_sheets_link.md      ← view-only Sheets link
-│
-├── analysis/
-│   ├── attrition_by_department.md
-│   ├── attrition_driver_satisfaction.md
-│   └── attrition_by_tenure.md
-│
+│   ├── cleaning_log.md
+│   └── google_sheets_link.md
 └── reports/
     ├── figures/
-    │   ├── attrition_by_dept.png
-    │   ├── satisfaction_vs_resign.png
-    │   └── tenure_attrition.png
-    └── TalentHub_HR_Retention.pdf  ← full presentation deck
+    └── TalentHub_HR_Retention.pdf
 ```
 
 ---
