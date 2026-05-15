@@ -52,7 +52,7 @@ Every employee who resigns doesn't just mean losing one person — it also means
 | **Google Sheets** | Data cleaning, preprocessing, pivot analysis, and dashboard |
 | **Canva** | Report visualization & presentation storytelling |
 
-🔗 [View Google Sheets (view only)](https://docs.google.com/spreadsheets/d/1Y5oFu8jkWHvGFuRvMw_ZcAjYE6GOuiql/edit?usp=sharing)
+🔗 [View Google Sheets (view only)]([https://docs.google.com/spreadsheets/d/1Y5oFu8jkWHvGFuRvMw_ZcAjYE6GOuiql/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1Y5oFu8jkWHvGFuRvMw_ZcAjYE6GOuiql/edit?usp=sharing&ouid=101609832099856013694&rtpof=true&sd=true))
 
 ---
 
@@ -85,7 +85,7 @@ All cleaning was performed in Google Sheets using built-in formulas.
 | Engineering | 263 | 45 | **17.1%** ← lowest |
 | **Grand Total** | **1,980** | **391** | **19.75%** |
 
-![Attrition by Department](reports/figures/Attrition By Department.png)
+![Attrition by Department](reports/figures/Attrition_By_Department.png)
 
 ---
 
@@ -105,7 +105,7 @@ Employees with low satisfaction scores are significantly more likely to resign:
 - Satisfaction < 3 (Low): 437 employees → **56.1% resign rate**
 - Satisfaction ≥ 3 (High): 1,542 employees → **9.5% resign rate**
 
-![Satisfaction vs Resign Rate](reports/figures/Employee by Satifaction Value .png)
+![Satisfaction vs Resign Rate](reports/figures/employee_by_satifaction_value.png)
 
 ---
 
