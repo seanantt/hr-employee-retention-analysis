@@ -1,6 +1,6 @@
 # 🏢 TalentHub HR Retention Analysis
 
-> Analisis attrition karyawan pada perusahaan HR consulting untuk mengidentifikasi faktor risiko resign dan memberikan rekomendasi strategis berbasis data.
+> Employee attrition analysis for an HR consulting firm to identify resignation risk factors and deliver data-driven strategic recommendations.
 
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 ![Tool](https://img.shields.io/badge/Tool-Google%20Sheets-34A853?logo=googlesheets&logoColor=white)
@@ -11,13 +11,13 @@
 
 ## 📌 Background
 
-Setiap karyawan yang resign bukan hanya kehilangan satu orang — tetapi juga berarti hilangnya produktivitas, meningkatnya biaya rekrutmen, terganggunya stabilitas tim, dan berkurangnya kualitas layanan kepada klien.
+Every employee who resigns doesn't just mean losing one person — it also means lost productivity, increased recruitment costs, disrupted team stability, and reduced service quality for clients.
 
-**TalentHub Indonesia** adalah perusahaan HR consulting yang melayani lebih dari 100 klien korporat. Tingginya attrition rate berpotensi menciptakan risiko operasional dan menghambat pertumbuhan perusahaan. Oleh karena itu, analisis ini dilakukan untuk:
+**TalentHub Indonesia** is an HR consulting company serving over 100 corporate clients. A high attrition rate creates operational risks and can hinder business growth. This analysis was conducted to:
 
-- Memahami pola resign karyawan berdasarkan departemen dan tenure
-- Mengidentifikasi faktor risiko utama yang mendorong attrition
-- Membantu manajemen mengambil keputusan berbasis data
+- Understand employee resignation patterns by department and tenure
+- Identify the key risk factors driving attrition
+- Help management make informed, data-driven decisions
 
 **Presented to:** Pak Hendro — HR Director, TalentHub Indonesia
 
@@ -25,9 +25,9 @@ Setiap karyawan yang resign bukan hanya kehilangan satu orang — tetapi juga be
 
 ## ❓ Key Questions
 
-1. Departemen mana yang paling banyak kehilangan karyawan?
-2. Profil karyawan seperti apa yang paling berisiko resign?
-3. Faktor apa yang paling berpengaruh terhadap attrition?
+1. Which department has the highest employee turnover?
+2. What employee profile is most at risk of resigning?
+3. What factors most significantly influence attrition?
 
 ---
 
@@ -35,63 +35,63 @@ Setiap karyawan yang resign bukan hanya kehilangan satu orang — tetapi juga be
 
 | Info | Detail |
 |---|---|
-| Periode data | 2018 – 2026 |
-| Total karyawan | 1.980 (setelah cleaning) |
-| Raw rows | 2.011 |
-| Anomali ditemukan | 30 baris (missing values + duplikat) |
-| Kolom utama | `department`, `salary`, `satisfaction`, `performance`, `work_hours`, `promotion_history`, `resign_status`, `tenure` |
+| Data period | 2018 – 2026 |
+| Total employees (clean) | 1,980 |
+| Raw rows | 2,011 |
+| Anomalies found | 30 rows (missing values + duplicates) |
+| Key columns | `department`, `salary`, `satisfaction`, `performance`, `work_hours`, `promotion_history`, `resign_status`, `tenure` |
 
-> ⚠️ Data bersifat internal perusahaan. Dataset tidak dipublikasikan secara penuh. Tersedia versi sample untuk keperluan review portofolio.
+> ⚠️ This dataset is internal company data. The full dataset is not publicly shared. A sample version is available for portfolio review purposes.
 
 ---
 
 ## 🛠️ Tools Used
 
-| Tool | Fungsi |
+| Tool | Purpose |
 |---|---|
-| **Google Sheets** | Data cleaning, preprocessing, pivot analysis, dan dashboard |
-| **Canva** | Visualisasi laporan & storytelling presentasi |
+| **Google Sheets** | Data cleaning, preprocessing, pivot analysis, and dashboard |
+| **Canva** | Report visualization & presentation storytelling |
 
-🔗 [Lihat Google Sheets (view only)](https://docs.google.com/spreadsheets/d/1Y5oFu8jkWHvGFuRvMw_ZcAjYE6GOuiql/edit?usp=sharing)
+🔗 [View Google Sheets (view only)](https://docs.google.com/spreadsheets/d/1Y5oFu8jkWHvGFuRvMw_ZcAjYE6GOuiql/edit?usp=sharing)
 
 ---
 
 ## 🧹 Data Cleaning Summary
 
-Cleaning dilakukan sepenuhnya di Google Sheets menggunakan formula bawaan.
+All cleaning was performed in Google Sheets using built-in formulas.
 
-| Jenis Anomali | Jumlah | Action | Formula |
+| Anomaly Type | Count | Action | Formula Used |
 |---|---|---|---|
-| Missing values (Salary / Perf / Satisfaction) | 20 | Exclude baris | `COUNTBLANK(Salary) + COUNTBLANK(Perf) + COUNTBLANK(Sat)` |
+| Missing values (Salary / Perf / Satisfaction) | 20 | Exclude rows | `COUNTBLANK(Salary) + COUNTBLANK(Perf) + COUNTBLANK(Sat)` |
 | Duplicate rows (exact match) | 10 | Keep first, drop rest | `COUNTA(rows) - ROWS(UNIQUE(all cols))` |
-| **Total anomali** | **30** | | |
+| **Total anomalies** | **30** | | |
 
-**Hasil:** 2.011 raw rows → **1.980 clean rows** (cross-check via `COUNTA` pada clean data)
+**Result:** 2,011 raw rows → **1,980 clean rows** (cross-checked via `COUNTA` on clean data)
 
 ---
 
 ## 🔍 Key Findings
 
-### 1. Attrition Rate per Departemen
+### 1. Attrition Rate by Department
 
-| Departemen | Total Karyawan | Resigned | Attrition Rate |
+| Department | Total Employees | Resigned | Attrition Rate |
 |---|---|---|---|
-| Customer Support | 270 | 57 | **21.1%** ← tertinggi |
+| Customer Support | 270 | 57 | **21.1%** ← highest |
 | HR | 276 | 58 | 21.0% |
 | Finance | 302 | 62 | 20.5% |
 | Marketing | 260 | 53 | 20.4% |
 | Operations | 311 | 61 | 19.6% |
 | Sales | 298 | 55 | 18.5% |
-| Engineering | 263 | 45 | **17.1%** ← terendah |
-| **Grand Total** | **1.980** | **391** | **19.75%** |
+| Engineering | 263 | 45 | **17.1%** ← lowest |
+| **Grand Total** | **1,980** | **391** | **19.75%** |
 
 ![Attrition by Department](reports/figures/attrition_by_dept.png)
 
 ---
 
-### 2. Satisfaction sebagai Prediktor Utama
+### 2. Job Satisfaction as the Primary Predictor
 
-Karyawan dengan satisfaction score rendah jauh lebih rentan resign:
+Employees with low satisfaction scores are significantly more likely to resign:
 
 | Satisfaction Score | Total | Resigned | Resign Rate |
 |---|---|---|---|
@@ -102,23 +102,23 @@ Karyawan dengan satisfaction score rendah jauh lebih rentan resign:
 | 5 | 208 | 0 | 0.0% |
 
 **Summary:**
-- Satisfaction < 3 (Low): 437 karyawan → **56.1% resign rate**
-- Satisfaction ≥ 3 (High): 1.542 karyawan → **9.5% resign rate**
+- Satisfaction < 3 (Low): 437 employees → **56.1% resign rate**
+- Satisfaction ≥ 3 (High): 1,542 employees → **9.5% resign rate**
 
-![Satisfaction vs Resign](reports/figures/satisfaction_vs_resign.png)
+![Satisfaction vs Resign Rate](reports/figures/satisfaction_vs_resign.png)
 
 ---
 
-### 3. Critical Tenure Window: Tahun Ke-2
+### 3. Critical Tenure Window: Year 2–3
 
-| Tenure Bucket | Total Karyawan | Resigned | Attrition Rate |
+| Tenure Bucket | Total Employees | Resigned | Attrition Rate |
 |---|---|---|---|
-| 0–2 tahun | 171 | 28 | 16.4% |
-| **2–3 tahun** | **299** | **70** | **23.4%** ← tertinggi |
-| 3–5 tahun | 561 | 119 | 21.2% |
-| 5+ tahun | 947 | 174 | 18.4% |
+| 0–2 years | 171 | 28 | 16.4% |
+| **2–3 years** | **299** | **70** | **23.4%** ← highest |
+| 3–5 years | 561 | 119 | 21.2% |
+| 5+ years | 947 | 174 | 18.4% |
 
-Risiko resign paling tinggi terjadi di **tahun ke-2 hingga ke-3**, mengindikasikan adanya *critical early tenure window* yang perlu diintervensi lebih awal.
+Resignation risk peaks during **year 2 to 3**, indicating a critical early tenure window that requires proactive intervention before employees decide to leave.
 
 ![Attrition by Tenure](reports/figures/tenure_attrition.png)
 
@@ -126,23 +126,23 @@ Risiko resign paling tinggi terjadi di **tahun ke-2 hingga ke-3**, mengindikasik
 
 ## 💡 Recommendations
 
-### 1. Prioritaskan Retention di Customer Support
-Departemen dengan attrition tertinggi (21.1%). Langkah yang direkomendasikan: exit interview mendalam, review workload, dan pembuatan career path yang jelas dari support → team lead → manager.
+### 1. Prioritize Retention Efforts in Customer Support
+The department with the highest attrition rate (21.1%). Recommended actions: conduct in-depth exit interviews, review workload distribution, and establish a clear career path from support → team lead → manager. Allocate retention budget proportionally to this department.
 
-### 2. Implementasi Early Warning System Berbasis Satisfaction
-Karyawan dengan satisfaction < 3 memiliki resign rate 56.1%. Jalankan pulse survey bulanan dan buat watchlist otomatis untuk karyawan berisiko tinggi agar mendapat 1-on-1 session dengan manager.
+### 2. Implement a Satisfaction-Based Early Warning System
+Employees with satisfaction < 3 have a 56.1% resign rate. Run monthly pulse surveys and automatically place at-risk employees on a watchlist for 1-on-1 sessions with their manager. Intervening early delivers the highest ROI by preventing resignations before they happen.
 
-### 3. Retention Program di Tahun Ke-2
-Attrition tertinggi terjadi di tenure 2–3 tahun (23.4%). Buat program **"Year 2 Check-in"** yang mencakup career conversation, compensation review, dan personal development plan.
+### 3. Launch a Year 2 Retention Program
+Attrition peaks at the 2–3 year tenure mark (23.4%). Build a structured **"Year 2 Check-in"** program covering career conversations, compensation reviews, and personal development plans. Don't wait for employees to resign before taking action.
 
 ---
 
 ## 📈 Business Impact
 
-Implementasi ketiga rekomendasi di atas berpotensi menghasilkan:
-- **Penurunan attrition rate** secara signifikan
-- **Penghematan biaya rekrutmen** (estimasi: biaya rekrut = 50–200% gaji tahunan per posisi)
-- **Peningkatan stabilitas tim** dan kepuasan klien korporat TalentHub
+Implementing these three recommendations has the potential to deliver:
+- **Reduced attrition rate** across all departments
+- **Lower recruitment costs** (estimated at 50–200% of annual salary per position)
+- **Improved team stability** and increased satisfaction for TalentHub's corporate clients
 
 ---
 
@@ -154,12 +154,12 @@ talenthub-hr-retention/
 ├── .gitignore
 │
 ├── data/
-│   ├── talenthub_clean.csv        ← export dari Google Sheets
+│   ├── talenthub_clean.csv        ← exported from Google Sheets
 │   └── data_dictionary.md
 │
 ├── cleaning/
-│   ├── cleaning_log.md            ← dokumentasi langkah cleaning
-│   └── google_sheets_link.md      ← link view-only Sheets
+│   ├── cleaning_log.md            ← step-by-step cleaning documentation
+│   └── google_sheets_link.md      ← view-only Sheets link
 │
 ├── analysis/
 │   ├── attrition_by_department.md
@@ -171,7 +171,7 @@ talenthub-hr-retention/
     │   ├── attrition_by_dept.png
     │   ├── satisfaction_vs_resign.png
     │   └── tenure_attrition.png
-    └── TalentHub_HR_Retention.pdf  ← deck presentasi lengkap
+    └── TalentHub_HR_Retention.pdf  ← full presentation deck
 ```
 
 ---
@@ -180,9 +180,9 @@ talenthub-hr-retention/
 
 **Rafly Sean Antonio** — Data Analyst
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Sean%20Antonio-0A66C2?logo=linkedin)](https://linkedin.com/in/seanantonio)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Sean%20Antonio-0A66C2?logo=linkedin)](https://linkedin.com/in/seanant)
 [![Email](https://img.shields.io/badge/Email-rseanantonio@gmail.com-D14836?logo=gmail&logoColor=white)](mailto:rseanantonio@gmail.com)
 
 ---
 
-*Project ini merupakan bagian dari portofolio data analyst. Data bersifat simulasi untuk keperluan pembelajaran dan demonstrasi kemampuan analisis.*
+*This project is part of a data analyst portfolio. The dataset used is a simulation for learning and skill demonstration purposes.*
